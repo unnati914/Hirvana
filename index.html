@@ -5,10 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hirvana</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes glow {
+        0%,
+        100% {
+          text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 20px #3b82f6;
+        }
+        50% {
+          text-shadow: 0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 30px #60a5fa;
+        }
+      }
+      .animate-glow {
+        animation: glow 2s infinite;
+      }
+      @keyframes spin-slow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .animate-spin-slow {
+        animation: spin-slow 4s linear infinite;
+      }
+      /* Sticky Navbar */
+      nav.sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: #0a0a23cc; /* slight transparency */
+        backdrop-filter: saturate(180%) blur(10px);
+      }
+    </style>
   </head>
   <body class="bg-gradient-to-b from-[#0A0A23] to-[#1B1B3A] text-white">
-    <!-- Navbar -->
-    <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+    <!-- Navbar (Sticky) -->
+    <nav class="sticky-nav flex justify-between items-center p-6 max-w-7xl mx-auto">
       <div class="text-2xl font-bold">HIRVANA</div>
       <div class="space-x-6 hidden md:flex">
         <button class="hover:text-blue-400">Learn</button>
@@ -18,7 +51,7 @@
       <button
         class="bg-[#2563EB] text-white px-4 py-2 rounded-full hover:bg-blue-700"
       >
-        Join Waitlist
+        Register
       </button>
     </nav>
 
@@ -43,7 +76,7 @@
         <button
           class="bg-[#2563EB] text-white px-6 py-3 rounded-md hover:bg-blue-700"
         >
-          Join Waitlist
+          Register Now
         </button>
         <button
           class="bg-blue-900/40 text-blue-300 px-6 py-3 rounded-md border border-blue-600 hover:bg-blue-800/40"
@@ -172,76 +205,97 @@
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="text-center py-16 px-4">
-      <h3 class="text-xl md:text-2xl font-bold mb-2">
-        🧭 Lost in the Job Hunt? We Built You a Map.
-      </h3>
-      <p class="text-gray-400 mb-6">
-        hirvana was born from that frustration, and now we’re flipping the
-        script & helping folks out.
-      </p>
-      <button
-        class="bg-[#2563EB] text-white px-6 py-3 rounded-md hover:bg-blue-700"
-      >
-        Join Waitlist
-      </button>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#0A0A23] py-8 px-4 border-t border-blue-900">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 text-gray-400">
-        <div>
-          <h4 class="font-bold text-white mb-2">HIRVANA</h4>
-          <p>Managed by hirvana labs</p>
-          <div class="flex space-x-2 mt-2">
-            <span>🐦</span><span>💬</span><span>💻</span>
-          </div>
+    <!-- Success Stories -->
+    <section class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">🌟 Success Stories</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="bg-[#0F172A] p-6 rounded-xl border border-blue-900 shadow-lg"
+        >
+          <h3 class="text-xl font-semibold mb-2">Sarah's Journey</h3>
+          <p class="text-gray-400">
+            “With Hirvana’s AI agent and mentors, I landed my dream job in half
+            the time.”
+          </p>
         </div>
-        <div>
-          <h4 class="text-white font-semibold mb-2">HIRVANA</h4>
-          <ul class="space-y-1">
-            <li>Media Kit</li>
-            <li>Learn</li>
-            <li>Careers</li>
-            <li>Disclaimer</li>
-          </ul>
+        <div
+          class="bg-[#0F172A] p-6 rounded-xl border border-blue-900 shadow-lg"
+        >
+          <h3 class="text-xl font-semibold mb-2">Raj's Success</h3>
+          <p class="text-gray-400">
+            “The tailored roadmap kept me focused. I nailed my interviews
+            confidently.”
+          </p>
         </div>
-        <div>
-          <h4 class="text-white font-semibold mb-2">GET HELP</h4>
-          <ul class="space-y-1">
-            <li>Community</li>
-            <li>Contact Us</li>
-            <li>Refund Policy</li>
-          </ul>
+        <div
+          class="bg-[#0F172A] p-6 rounded-xl border border-blue-900 shadow-lg"
+        >
+          <h3 class="text-xl font-semibold mb-2">Anita's Experience</h3>
+          <p class="text-gray-400">
+            “Mentorship and AI together? A game changer for my career.”
+          </p>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <style>
-      @keyframes glow {
-        0%,
-        100% {
-          text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 20px #3b82f6;
-        }
-        50% {
-          text-shadow: 0 0 10px #60a5fa, 0 0 20px #60a5fa, 0 0 30px #60a5fa;
-        }
-      }
-      .animate-glow {
-        animation: glow 2s infinite;
-      }
-      @keyframes spin-slow {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      .animate-spin-slow {
-        animation: spin-slow 4s linear infinite;
-      }
-    </style>
+    <!-- FAQ Section -->
+    <section
+      class="max-w-7xl mx-auto px-4 py-16 bg-[#0A0A23] rounded-xl border border-blue-900"
+    >
+      <h2 class="text-3xl font-bold mb-8 text-center">❓ Frequently Asked Questions</h2>
+      <div class="space-y-4 max-w-3xl mx-auto">
+        <button
+          class="faq-question w-full text-left px-4 py-3 bg-blue-900 rounded-md flex justify-between items-center"
+        >
+          <span>What is Hirvana?</span>
+          <span class="rotate-0 transition-transform duration-300">&#x25BC;</span>
+        </button>
+        <div class="faq-answer hidden px-4 py-3 text-gray-300 bg-blue-800 rounded-b-md">
+          Hirvana is your AI-powered career wingman, helping you with resume
+          building, job applications, interview prep, and mentorship.
+        </div>
+
+        <button
+          class="faq-question w-full text-left px-4 py-3 bg-blue-900 rounded-md flex justify-between items-center"
+        >
+          <span>How does the AI agent help me?</span>
+          <span class="rotate-0 transition-transform duration-300">&#x25BC;</span>
+        </button>
+        <div class="faq-answer hidden px-4 py-3 text-gray-300 bg-blue-800 rounded-b-md">
+          The AI agent personalizes your job search, edits your resume per job
+          requirements, and even applies on your behalf.
+        </div>
+
+        <button
+          class="faq-question w-full text-left px-4 py-3 bg-blue-900 rounded-md flex justify-between items-center"
+        >
+          <span>Is mentorship included?</span>
+          <span class="rotate-0 transition-transform duration-300">&#x25BC;</span>
+        </button>
+        <div class="faq-answer hidden px-4 py-3 text-gray-300 bg-blue-800 rounded-b-md">
+          Yes, we provide invite-only mentorship programs with real industry
+          mentors to guide you throughout your journey.
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // FAQ toggle functionality
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          const arrow = question.querySelector("span:last-child");
+          if (answer.classList.contains("hidden")) {
+            answer.classList.remove("hidden");
+            arrow.style.transform = "rotate(180deg)";
+          } else {
+            answer.classList.add("hidden");
+            arrow.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
